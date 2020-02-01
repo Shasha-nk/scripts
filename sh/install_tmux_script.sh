@@ -94,7 +94,7 @@ run_tmux()
     install_ncurses 2>&1 | tee -a $HOME/log/log_tmux.txt
     install_tmux 2>&1 | tee -a $HOME/log/log_tmux.txt
     echo "$HOME/local/bin/tmux is now available." 2>&1 | tee -a $HOME/log/log_tmux.txt
-    echo "Please add $HOME/local/bin to your PATH or else tmux would not be available from all directories" 2>&1 | tee $HOME/log/log_tmux.txt
+    echo "Please add $HOME/local/bin to your PATH or else tmux would not be available from all directories" 2>&1 | tee -a $HOME/log/log_tmux.txt
 }
 
 run_tmux
