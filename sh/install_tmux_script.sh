@@ -1,8 +1,8 @@
 # Script for installing tmux on systems where you don't have root access.
 # Assumption        : C/C++ compiler & wget are installed.
 # Installation dir  : $HOME/local/bin.
-# Details		    : Script is copied from https://gist.github.com/ryin/3106801
-					: and updated acc to needs
+# Details           : Script is copied from https://gist.github.com/ryin/3106801
+#                   : and updated acc to needs
 set -x
 set -e
 
@@ -64,15 +64,15 @@ install_tmux()
 	tar xvzf tmux-${TMUX_VERSION}.tar.gz
 	cd tmux-${TMUX_VERSION}
 	./configure CFLAGS="-I$HOME/local/include \
-						-I$HOME/local/include/ncurses" \
+                        -I$HOME/local/include/ncurses" \
 				LDFLAGS="-L$HOME/local/lib \
-						-L$HOME/local/include/ncurses \
-						-L$HOME/local/include" \
+                        -L$HOME/local/include/ncurses \
+                        -L$HOME/local/include" \
 				CPPFLAGS="-I$HOME/local/include \
-						-I$HOME/local/include/ncurses" \
+                        -I$HOME/local/include/ncurses" \
 				LDFLAGS="-static -L$HOME/local/include \
-						-L$HOME/local/include/ncurses \
-						-L$HOME/local/lib"
+                        -L$HOME/local/include/ncurses \
+                        -L$HOME/local/lib"
 	make
 	make install
 	cp tmux $HOME/local/bin
