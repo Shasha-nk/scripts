@@ -33,7 +33,7 @@ install_gdb()
 	cd $MY_HOME
 	tar -zxvf gdb-${GDB_VERSION}.tar.gz
 	cd gdb-${GDB_VERSION}
-	./configure --enable-gold --enable-ld --enable-libada --enable-libssp --with-system-zlib --prefix=$MY_HOME
+	./configure --enable-gold --enable-ld --enable-libada --enable-libssp --with-system-zlib --prefix=$MY_HOME/gdb-${GDB_VERSION}
 	make
 	make -C gdb/doc doxy  #This is required only if you need documentation
 	make -C gdb install
